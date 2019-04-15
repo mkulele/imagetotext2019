@@ -1,0 +1,50 @@
+<% include ./partials/header %>
+
+    <div class="sect sect--padding-bottom">
+        <div class="container">
+            <div class="row row--margin">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <div class="contacts">
+                        <div class="header__logo"><img class="header__img" src="img/icon.png"> <h1 class="header__title">Login<span class="header__light"> 로그인</span></h1></div>
+                        <p class="contacts__address">
+                            비밀번호를<br>
+                            잊으셨나요?
+                        </p>
+                        <p class="contacts__info">
+                            비밀번호 <a href="#" class="contacts__info-link">찾기</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="contact" class="form" method="post" action="/login" >
+                        <div class="form-group">
+                                <input type="text" name="email" placeholder="Email" class="form__field form__text" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="password" placeholder="Password" class="form__field form__text" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn--up btn--width" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+<div class="sect sect--violet ">
+    <img src="https://image.ibb.co/fWyVtb/path3762.png" class="career-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="career_title">메인페이지로</h1>
+                <h1 class="career_sub">To Home</h1>
+                <a href="/" class="btn btn--white btn--width">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

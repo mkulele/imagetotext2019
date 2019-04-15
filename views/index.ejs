@@ -1,0 +1,150 @@
+<% include ./partials/header %>
+
+<div class="sect sect--padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site">
+                    <% if(email.length > 0) { %>
+                    <h1 class="site__title">Hello! <%= email %> </h1>
+                    <% } %>
+                    <h1 class="site__title">이미지 속 글자를 텍스트 변환하세요!</h1>
+                    <h2 class="site__subtitle">Url로 인식이 안되면, 이미지를 업로드하세요 :)</h2>
+
+                        <div class="form-group">
+                            <select class="form__field form__select" id="tesseract_select">
+                                <option selected value disabled>언어 선택</option>
+                                <option value="kor">한국어</option>
+                                <option value="eng">영어</option>
+                                <option value="fra">불어</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="form__field--half">
+                                <input type="text" id="tesseract_url" placeholder="이미지 URL" class="form__field form__text" />
+                            </div>
+                            <div class="form__field--half">
+                                <input type="file" class="form__field form__text" accept=".jpg,.jpeg,.png"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="tesseract_progress" placeholder="진행사항" class="form__field form__text" disabled />
+                        </div>
+                        <div class="form-group">
+                            <div class="form__field--half">
+                                <div class="form__field form__textarea" style="background: white">
+                                    <img src="/img/No_Image_Here.jpg" id="tesseract_img" style="max-height: 180px"/>
+                                </div>
+
+                            </div>
+                            <div class="form__field--half">
+                                <textarea type="text" id="tesseract_result" placeholder="결과물" class="form__field form__textarea" disabled></textarea>
+                                <button class="btn btn--up btn--width" id="tesseract_button">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sect sect--padding-bottom">
+    <div class="container">
+        <div class="row row--center">
+            <h1 class="row__title">
+                무엇을 할 수 있나요?
+            </h1>
+            <h2 class="row__sub">홈페이지 기능</h2>
+        </div>
+        <div class="row row--center row--margin">
+            <div class="col-md-4 col-sm-4 price-box price-box--purple">
+                <div class="price-box__wrap">
+                    <div class="price-box__img"></div>
+                    <h1 class="price-box__title">
+                        FeedBack
+                    </h1>
+                    <p class="price-box__people">
+                        피드백
+                    </p>
+                    <p class="price-box__feat">
+                        무엇인가요?
+                    </p>
+                    <ul class="price-box__list">
+                        <li class="price-box__list-el">인식이 안되는 문자를 올려주세요</li>
+                        <li class="price-box__list-el">데이터를 차곡차곡 모아서</li>
+                        <li class="price-box__list-el">우리의 모델을 학습시켜요</li>
+                        <li class="price-box__list-el">더 정확한 인식을 할 수 있어요</li>
+                    </ul>
+                    <div class="price-box__btn">
+                        <a class="btn btn--purple btn--width">Start now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- second -->
+            <div class="col-md-4 col-sm-4 price-box price-box--violet">
+                <div class="price-box__wrap">
+                    <div class="price-box__img"></div>
+                    <h1 class="price-box__title">
+                        Board
+                    </h1>
+                    <p class="price-box__people">
+                        자유게시판
+                    </p>
+                    <p class="price-box__feat">
+                        무엇인가요?
+                    </p>
+                    <ul class="price-box__list">
+                        <li class="price-box__list-el">유저들과 우리 서비스에 대해</li>
+                        <li class="price-box__list-el">자유롭게 이야기하세요</li>
+                        <li class="price-box__list-el">또는, OCR엔진에 대해서</li>
+                        <li class="price-box__list-el">자유롭게 의견을 나누세요</li>
+                    </ul>
+                    <div class="price-box__btn">
+                        <a class="btn btn--violet btn--width">Start now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- terzo -->
+            <div class="col-md-4 col-sm-4 price-box price-box--blue">
+                <div class="price-box__wrap">
+                    <div class="price-box__img"></div>
+                    <h1 class="price-box__title">
+                        Chatting
+                    </h1>
+                    <p class="price-box__people">
+                        채팅
+                    </p>
+                    <p class="price-box__feat">
+                        무엇인가요?
+                    </p>
+                    <ul class="price-box__list">
+                        <li class="price-box__list-el">09시~16시에 실시간으로</li>
+                        <li class="price-box__list-el">우리에게 문의하세요</li>
+                        <li class="price-box__list-el">또는, 유저끼리</li>
+                        <li class="price-box__list-el">자유롭게 채팅을 하세요</li>
+                    </ul>
+                    <div class="price-box__btn">
+                        <a class="btn btn--blue btn--width">Start now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sect sect--violet ">
+    <img src="https://image.ibb.co/fWyVtb/path3762.png" class="career-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="career_title">우리는 Tesseract.js를 사용합니다.</h1>
+                <h1 class="career_sub">We use Tesseract.js</h1>
+                <a href="http://tesseract.projectnaptha.com/" class="btn btn--white btn--width">Tesseract.js</a>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer %>

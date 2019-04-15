@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="https://image.ibb.co/fOur3b/favicon.png"/>
+    <meta name="theme-color" content="#3a9fff">
+    <script src='https://cdn.jsdelivr.net/gh/naptha/tesseract.js@v1.0.14/dist/tesseract.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon.png"/>
+    <meta name="theme-color" content="#1885ed">
+    <title>Image to Text</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="container header__container">
+        <div class="header__logo"><img class="header__img" src="img/icon.png"> <h1 class="header__title">Image<span class="header__light"> to </span>Text</h1></div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="header__menu">
+            <nav id="navbar" class="header__nav collapse">
+                <ul class="header__elenco">
+                    <li class="header__el"><a href="/" class="header__link">Home</a></li>
+                    <li class="header__el"><a href="#" class="header__link">FeedBack</a></li>
+                    <li class="header__el"><a href="#" class="header__link">Board</a></li>
+                    <li class="header__el"><a href="#" class="header__link">Chatting</a></li>
+                    <li class="header__el"><a href="/signup" class="header__link">SignUp</a></li>
+                    <% if(isLogin==="Login") { %>
+                    <li class="header__el header__el--blue"><a href="/login" class="btn btn--white"><%=isLogin%> →</a></li>
+                    <% } else{%>
+                    <li class="header__el header__el--blue"><a href="/logout" class="btn btn--white"><%=isLogin%> →</a></li>
+                    <%}%>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
