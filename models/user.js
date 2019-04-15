@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+mongoose.set('useCreateIndex', true);
 const userSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name :{ type: String, required: true },
@@ -9,5 +9,6 @@ const userSchema = new mongoose.Schema({
     //key_for_verify :{ type:Boolean, require:true, default:false },
     isAdmin: { type: Boolean, default: false }
 });
+
 
 module.exports = mongoose.model("User", userSchema);

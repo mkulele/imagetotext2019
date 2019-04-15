@@ -25,7 +25,7 @@ router.get('/signup', (req, res) => {
         res.send('<script type="text/javascript">alert("이미 로그인 중입니다."); window.location="/"; </script>')
         //res.render('index',{email:req.user.email, isLogin:"Logout"})
     }
-    else{res.render('login',{email:'',isLogin:"Login"})}
+    else{res.render('signup',{email:'',isLogin:"Login"})}
 });
 
 
