@@ -100,7 +100,6 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/login',
         //로그인 성공 시 '/'으로 이동
     });
 
-
 //로그아웃
 router.get('/logout', function (req, res) {
     req.logout();
