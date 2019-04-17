@@ -11,6 +11,8 @@ const PORT= process.env.PORT || 3000;
 
 // routes
 const indexRoute = require("./routes/index");
+const chattingRoute = require("./routes/chatting");
+const boardRoute = require("./routes/board");
 
 // DB연결
 //let url =  "mongodb://localhost:27017/dalhav";
@@ -51,6 +53,8 @@ app.use(passport.session());
 
 // use routes
 app.use("/", indexRoute);
+app.use("/board", boardRoute);
+app.use("/chatting", chattingRoute);
 
 //listen
 app.listen(PORT, function () {

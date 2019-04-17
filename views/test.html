@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', serif;
+            line-height: 1.6
+        }
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }ul.tabs{
+             margin: 0px;
+             padding: 0px;
+             list-style: none;}
+        ul.tabs li{
+            background: none;
+            color: #222;
+            display: inline-block;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        ul.tabs li.current{
+            background: #ededed;
+            color: #222;
+        }
+        .tab-content{
+            display: none;
+            background: #ededed;
+            padding: 15px;
+        }
+        .tab-content.current{
+            display: inherit;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">정보</li>
+            <li class="tab-link" data-tab="tab-2">점검결과</li>
+            <li class="tab-link" data-tab="tab-3">점검결과 그래프</li>
+        </ul>
+        <div id="tab-1" class="tab-content current">
+            hihi</div>
+        <div id="tab-2" class="tab-content">
+            <table border=1>
+                <tr>
+                    <td>번호</td>
+                    <td>항목</td>
+                    <td>현재상태</td>
+                    <td>진단결과</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Default Id</td>
+                    <td>lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</td>
+                    <td>Bad</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Root mgm</td>
+                    <td>root -> UID=0</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Passwd File Permission</td>
+                    <td>-rw-r--r--. 1 root root 2310  3월  6 13:40 /etc/passwd</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Group file PermissionCheck</td>
+                    <td>-rw-r--r--. 1 root root 981  3월  7 00:42 /etc/group</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Passwd Rule Check</td>
+                    <td>PASS_MIN_LEN   8   <br>
+                        PASS_MAX_DAYS   69   <br>
+                        PASS_MIN_DAYS   1   </td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Shell Check</td>
+                    <td>bin:x:1:1:bin:/bin:/sbin/nologin
+                        <br>daemon:x:2:2:daemon:/sbin:/sbin/nologin
+                        <br>adm:x:3:4:adm:/var/adm:/sbin/nologin
+                        <br>operator:x:11:0:operator:/root:/sbin/nologin
+                        <br>games:x:12:100:games:/usr/games:/sbin/nologin
+                        <br>nobody:x:99:99:Nobody:/:/sbin/nologin
+                        <br>systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin<br></td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Su Check</td>
+                    <td>(1) /etc/pam.d/su File<br><br>
+                        #%PAM-1.0
+                        <br>auth      sufficient   pam_rootok.so
+                        <br># Uncomment the following line to implicitly trust users in the "wheel" group.
+                        <br>#auth      sufficient   pam_wheel.so trust use_uid
+                        <br># Uncomment the following line to require a user to be in the "wheel" group.
+                        <br>auth      required   pam_wheel.so use_uid
+                        <br>auth      substack   system-auth
+                        <br>auth      include      postlogin
+                        <br>account      sufficient   pam_succeed_if.so uid = 0 use_uid quiet
+                        <br>account      include      system-auth
+                        <br>password   include      system-auth
+                        <br>session      include      system-auth
+                        <br>session      include      postlogin
+                        <br>session      optional   pam_xauth.so<br><br>(2) /etc/group File<br><br>
+                        root:x:0:
+                        <br>bin:x:1:
+                        <br>daemon:x:2:
+                        <br>sys:x:3:
+                        <br>adm:x:4:
+                        <br>tty:x:5:
+                        <br>disk:x:6:
+                        <br>lp:x:7:
+                        <br>mem:x:8:
+                        <br>kmem:x:9:
+                        <br>wheel:x:10:centos
+                        <br>cdrom:x:11:
+                        <br>mail:x:12:postfix
+                        <br>man:x:15:
+                        <br>dialout:x:18:
+                        <br>floppy:x:19:
+                        <br>games:x:20:
+                        <br>tape:x:33:
+                        <br>video:x:39:
+                        <br>ftp:x:50:
+                        <br>lock:x:54:
+                        <br>audio:x:63:
+                        <br>nobody:x:99:
+                        <br>users:x:100:
+                        <br>utmp:x:22:
+                        <br>utempter:x:35:
+                        <br>stapusr:x:156:
+                        <br>stapsys:x:157:
+                        <br>stapdev:x:158:
+                        <br>input:x:999:
+                        <br>systemd-journal:x:190:
+                        <br>systemd-network:x:192:
+                        <br>dbus:x:81:
+                        <br>polkitd:x:998:
+                        <br>cgred:x:997:
+                        <br>printadmin:x:996:
+                        <br>libstoragemgmt:x:995:
+                        <br>colord:x:994:
+                        <br>rpc:x:32:
+                        <br>dip:x:40:
+                        <br>gluster:x:993:
+                        <br>ssh_keys:x:992:
+                        <br>saslauth:x:76:
+                        <br>abrt:x:173:
+                        <br>rtkit:x:172:
+                        <br>pulse-access:x:991:
+                        <br>pulse-rt:x:990:
+                        <br>pulse:x:171:
+                        <br>radvd:x:75:
+                        <br>unbound:x:989:
+                        <br>chrony:x:988:
+                        <br>rpcuser:x:29:
+                        <br>nfsnobody:x:65534:
+                        <br>kvm:x:36:qemu
+                        <br>qemu:x:107:
+                        <br>tss:x:59:
+                        <br>libvirt:x:987:
+                        <br>usbmuxd:x:113:
+                        <br>geoclue:x:986:
+                        <br>ntp:x:38:
+                        <br>sssd:x:985:
+                        <br>setroubleshoot:x:984:
+                        <br>saned:x:983:
+                        <br>gdm:x:42:
+                        <br>gnome-initial-setup:x:982:
+                        <br>sshd:x:74:
+                        <br>slocate:x:21:
+                        <br>avahi:x:70:
+                        <br>postdrop:x:90:
+                        <br>postfix:x:89:
+                        <br>tcpdump:x:72:
+                        <br>centos:x:1000:<br></td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>08 Shadow Check</td>
+                    <td>----------. 1 root root 1270  3월  6 20:06 /etc/shadow</td>
+                    <td>Good</td>
+                </tr>
+            </table>
+        </div>
+        <div id="tab-3" class="tab-content">
+            hihi</div>
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script>
+    $(document).ready(function(){
+
+        $('ul.tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.tabs li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+        })
+    })
+</script>
+</html>
