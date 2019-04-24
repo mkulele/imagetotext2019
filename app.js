@@ -15,8 +15,8 @@ const chattingRoute = require("./routes/chatting");
 const boardRoute = require("./routes/board");
 
 // DB연결
-//let url =  "mongodb://localhost:27017/dalhav";
-let url = "mongodb://admin:iamadmin123@ds239936.mlab.com:39936/heroku_gm078sp6";
+let url =  "mongodb://localhost:27017/dalhav";
+//let url = "mongodb://admin:iamadmin123@ds239936.mlab.com:39936/heroku_gm078sp6";
 mongoose.connect(url, {useNewUrlParser: true});
 
 // 뷰엔진 설정
